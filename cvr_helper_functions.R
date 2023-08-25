@@ -162,7 +162,10 @@ clean_cvr_sheet <- function(xml_file_path, file_names, sheet_num, cvr_info){
   return(all_votes)
 }
 
-clean_cvr_data <- function(xml_file_path, file_names){
+clean_cvr_data <- function(xml_file_path){
+
+  # Get all file names
+  file_names <- list.files(path = xml_file_path, pattern='xml')
   
   # Get all the metadata about the votes
   cvr_info <- get_info(xml_file_path, file_names)
